@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!DOCTYPE benchmark PUBLIC "+//IDN sosy-lab.org//DTD BenchExec benchmark 1.98//EN" "http://www.sosy-lab.org/benchexec/benchmark-1.98.dtd">
+<benchmark tool="cpachecker">
+    <option name="-heap">2000M</option>
+    <option name="-config">config/batteryARG.properties</option>
+    <option name="-setprop">battery.PowerConsumptionGetter = RandomPowerConsumptionGetter</option>
+    <option name="-setprop">battery.useSeed = true</option>
+
+    <tasks name="loops1">
+        <option name="-setprop">battery.seed = 995</option>
+        <include>../programs/loops/loops1.c</include>
+    </tasks>
+
+    <tasks name="loops2">
+        <option name="-setprop">battery.seed = 1</option>
+        <include>../programs/loops/loops2.c</include>
+    </tasks>
+
+    <tasks name="loops3">
+        <option name="-setprop">battery.seed = 13</option>
+        <include>../programs/loops/loops3.c</include>
+    </tasks>
+
+    <tasks name="loops4">
+        <option name="-setprop">battery.seed = 91</option>
+        <include>../programs/loops/loops4.c</include>
+    </tasks>
+
+    <tasks name="loops5">
+        <option name="-setprop">battery.seed = 16</option>
+        <include>../programs/loops/loops5.c</include>
+    </tasks>
+
+    <tasks name="loops6">
+        <option name="-setprop">battery.seed = 13</option>
+        <include>../programs/loops/loops6.c</include>
+    </tasks>
+
+    <tasks name="nested1">
+        <option name="-setprop">battery.seed = 94</option>
+        <include>../programs/nested/nested1.c</include>
+    </tasks>
+
+    <tasks name="nested1.cil">
+        <option name="-setprop">battery.seed = 16</option>
+        <include>../programs/nested/nested1.cil.c</include>
+    </tasks>
+
+    <tasks name="nested1_BUG">
+        <option name="-setprop">battery.seed = 94</option>
+        <include>../programs/nested/nested1_BUG.c</include>
+    </tasks>
+
+    <tasks name="nested1_BUG.cil">
+        <option name="-setprop">battery.seed = 94</option>
+        <include>../programs/nested/nested1_BUG.cil.c</include>
+    </tasks>
+
+    <tasks name="nested2">
+        <option name="-setprop">battery.seed = 10</option>
+        <include>../programs/nested/nested2.c</include>
+    </tasks>
+
+    <tasks name="nested2.cil">
+        <option name="-setprop">battery.seed = 90</option>
+        <include>../programs/nested/nested2.cil.c</include>
+    </tasks>
+
+    <tasks name="nested3">
+        <option name="-setprop">battery.seed = 16</option>
+        <include>../programs/nested/nested3.c</include>
+    </tasks>
+
+    <tasks name="nested3.cil">
+        <option name="-setprop">battery.seed = 13</option>
+        <include>../programs/nested/nested3.cil.c</include>
+    </tasks>
+
+    <tasks name="nested4">
+        <option name="-setprop">battery.seed = 92</option>
+        <include>../programs/nested/nested4.c</include>
+    </tasks>
+
+    <tasks name="nested4.cil">
+        <option name="-setprop">battery.seed = 92</option>
+        <include>../programs/nested/nested4.cil.c</include>
+    </tasks>
+
+    <tasks name="nested5">
+        <option name="-setprop">battery.seed = 17</option>
+        <include>../programs/nested/nested5.c</include>
+    </tasks>
+
+    <tasks name="nested5.cil">
+        <option name="-setprop">battery.seed = 17</option>
+        <include>../programs/nested/nested5.cil.c</include>
+    </tasks>
+
+    <tasks name="nested6">
+        <option name="-setprop">battery.seed = 1</option>
+        <include>../programs/nested/nested6.c</include>
+    </tasks>
+
+    <tasks name="nested6.cil">
+        <option name="-setprop">battery.seed = 1</option>
+        <include>../programs/nested/nested6.cil.c</include>
+    </tasks>
+
+    <rundefinition name="forgetful1">
+        <option name="-setprop">battery.PathUpdate = ForgetfulPathUpdate</option>
+    </rundefinition>
+
+    <rundefinition name="nonforgetful1">
+        <option name="-setprop">battery.PathUpdate = NonforgetfulPathUpdate</option>
+    </rundefinition>
+</benchmark>
